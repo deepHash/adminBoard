@@ -1,0 +1,660 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h2>Activity</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
+      <img class="profilePic" src="./assets/images/user.png">
+    </div>
+    <div class="col-lg-3 col-md-5 col-sm-5 col-xs-3">
+      <h5 class="userName">User Name: Igal </h5>
+      <h6 class="status">Status : Started</h6>
+      <button mat-raised-button color="warn">Stop</button>
+    </div>
+    <div class="col-lg-3 col-md-5 col-sm-5 col-xs-2">
+      <div class="toggleBtn">
+        <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
+          Likes
+        </mat-slide-toggle>
+      </div>
+      <div class="toggleBtn">
+        <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
+          Comments
+        </mat-slide-toggle>
+      </div>
+      <div class="toggleBtn">
+        <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
+          Follows
+        </mat-slide-toggle>
+      </div>
+      <div class="toggleBtn">
+        <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
+          UnFollows
+        </mat-slide-toggle>
+      </div>
+    </div>
+    <div id="clear"></div>
+
+  </div>
+
+  <!-- Targetting -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              center_focus_strong
+            </i>
+            <span class="categoriesTitle">Targeting</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="tags" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Tags ?</label>
+            <mat-checkbox id="tags" class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="location" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Locations</label>
+            <mat-checkbox id="location" class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="followers" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Followers ?</label>
+            <mat-form-field>
+              <mat-select id="followers" [(value)]="selected">
+                <mat-option>All</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!-- <mat-checkbox  class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox> -->
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="following" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Following ?</label>
+            <mat-form-field>
+              <mat-select id="following" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="liker" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Likers ?</label>
+            <mat-form-field>
+              <mat-select id="liker" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="commenters" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Commenters ?</label>
+            <mat-form-field>
+              <mat-select id="commenters" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <!-- speed -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              av_timer
+            </i>
+            <span class="categoriesTitle">Speed</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="activitySpeed" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Activity speed:</label>
+            <mat-form-field>
+              <mat-select [(value)]="selected" id="activitySpeed">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="likesHour" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Likes / hour:</label>
+            <mat-form-field class="example-full-width">
+              <input id="likesHour" matInput placeholder="Likes / hour">
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="commentsHour" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Comments / hour:</label>
+            <mat-form-field class="example-full-width">
+              <input id="commentsHour" matInput placeholder="Comments / hour">
+            </mat-form-field>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="followsHour" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Follows / hour</label>
+            <mat-form-field>
+              <mat-select id="followsHour" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="unfollowsHour" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Unfollows / hour:</label>
+            <mat-form-field>
+              <mat-select id="unfollowsHour" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+
+
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <!-- filter -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              filter_list
+            </i>
+            <span class="categoriesTitle">Filter</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="madiaAge" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Madia Age:</label>
+            <mat-form-field>
+              <mat-select id="madiaAge" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="minFollowersFilter" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Min followers filter:</label>
+            <mat-form-field>
+              <mat-select id="minFollowersFilter" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="minFollowingFilters" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Min Following Filters</label>
+            <mat-form-field>
+              <mat-select id="minFollowingFilters" [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="All">All</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <!-- like -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              favorite_border
+            </i>
+            <span class="categoriesTitle">Like</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="dontLike" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Don't Like same users</label>
+            <mat-checkbox id="dontLike" class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+          </div>
+        </div>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <!-- comment -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              mode_comment
+            </i>
+            <span class="categoriesTitle">Comment</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="dontComment" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Don't Comment same users</label>
+            <mat-checkbox id="dontComment" class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            Comments
+            <span *ngFor="let smile of smileArray" class="smileSection" (click)='removeSmile()'>
+              <i class="material-icons smile">
+                {{smile }}
+              </i>
+              <i class="material-icons clear">
+                clear
+              </i>
+            </span>
+            <span (click)='addSmile()'>
+              <i class="material-icons addSmile">
+                add_circle
+              </i>
+            </span>
+
+
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <!-- follow -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              favorite_border
+            </i>
+            <span class="categoriesTitle">Follow</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="followCycle" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Follow cycle:</label>
+            <mat-form-field class="example-full-width">
+              <input id="followCycle" matInput placeholder="Follow Cycle">
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="dontFollowSusers" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Don't Follow same users</label>
+            <mat-checkbox id="dontFollowSusers" class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="dontFollowPusers" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Don't follow private users</label>
+            <mat-checkbox id="dontFollowPusers" class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <!-- unfollow -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              block
+            </i>
+            <span class="categoriesTitle">Unfollow</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="unfollowSource" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Unfollow source:</label>
+            <mat-form-field class="example-full-width">
+              <input id="unfollowSource" matInput placeholder="Unfollow source">
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="unfollowCycle" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Unfollow cycle:</label>
+            <mat-form-field class="example-full-width">
+              <input id="unfollowCycle" matInput placeholder="Unfollow cycle">
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="dontUnfollowMyFollowers" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Don't unfollow my followers</label>
+            <mat-checkbox id="dontUnfollowMyFollowers" class="example-margin" [(ngModel)]="checked"></mat-checkbox>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <!-- Tags -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              local_offer
+            </i>
+            <span class="categoriesTitle">Tags</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="tag" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Tags:</label>
+            <mat-form-field class="example-full-width">
+              <input id="tag" matInput placeholder="Tags" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addTags($event)">
+              <span>
+                <i class="material-icons addTags">
+                  add_circle
+                </i>
+              </span>
+            </mat-form-field>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let tag of tags" [selectable]="selectable" [removable]="removableTags" (removed)="removeTags(tag)">
+                {{tag.name}}
+                <mat-icon matChipRemove *ngIf="removableTags">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <!-- locations -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              person_add
+            </i>
+            <span class="categoriesTitle">Locations</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="locations" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Locations:</label>
+            <mat-form-field class="example-full-width">
+              <input id="locations" matInput placeholder="Locations" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addLocation($event)">
+              <span>
+                <i class="material-icons addTags">
+                  add_circle
+                </i>
+              </span>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let location of locations" [selectable]="selectable" [removable]="removableLocations" (removed)="removeLocation(location)">
+                {{location.name}}
+                <mat-icon matChipRemove *ngIf="removableTags">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <!-- usernames -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              near_me
+            </i>
+            <span class="categoriesTitle">Usernames</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="userNames" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Usernames:</label>
+            <mat-form-field class="example-full-width">
+              <input id="userNames" matInput placeholder="User Names" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addUserNames($event)">
+              <span>
+                <i class="material-icons addTags">
+                  add_circle
+                </i>
+              </span>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let userName of userNames" [selectable]="selectable" [removable]="removableUserNames" (removed)="removeUserNames(userName)">
+                {{userName.name}}
+                <mat-icon matChipRemove *ngIf="removableTags">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <!-- black list -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              block
+            </i>
+            <span class="categoriesTitle">Black list</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="tagsBlackList" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Tags black list:</label>
+            <mat-form-field class="example-full-width">
+              <input id="tagsBlackList" matInput placeholder="Tags black list" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addBlackList($event)">
+              <span>
+                <i class="material-icons addTags">
+                  add_circle
+                </i>
+              </span>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let tagBlack of tagBlackList" [selectable]="selectable" [removable]="removableTagsBlackList" (removed)="removeBlackList(tagBlack)">
+                {{tagBlack.name}}
+                <mat-icon matChipRemove *ngIf="removableTags">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="usernamesBlackList" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Usernames black list:</label>
+            <mat-form-field class="example-full-width">
+              <input id="usernamesBlackList" matInput placeholder="Usernames black list:" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addUserNameBlackList($event)">
+              <span>
+                <i class="material-icons addTags">
+                  add_circle
+                </i>
+              </span>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let userNameBlack of userNameBlackList" [selectable]="selectable" [removable]="removableUserNameBlackList"
+                (removed)="removeUserNameBlackList(userNameBlack)">
+                {{userNameBlack.name}}
+                <mat-icon matChipRemove *ngIf="removableTags">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="keywordsBlackList" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Keywords black list:</label>
+            <mat-form-field class="example-full-width">
+              <input id="keywordsBlackList" matInput placeholder="Keywords black list" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addKeywordBlackList($event)">
+              <span>
+                <i class="material-icons addTags">
+                  add_circle
+                </i>
+              </span>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let keywordBlack of keywordBlackList" [selectable]="selectable" [removable]="removableKeywordBlackList"
+                (removed)="removeKeywordBlackList(keywordBlack)">
+                {{keywordBlack.name}}
+                <mat-icon matChipRemove *ngIf="removableTags">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <!-- auto stop -->
+  <div class="diffCategories">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i class="material-icons">
+              block
+            </i>
+            <span class="categoriesTitle">Auto Stop</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr/>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="followsCounter" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Follows counter:</label>
+            <mat-form-field class="example-full-width">
+              <input id="followsCounter" matInput placeholder="Follow counter">
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <label for="unFollowsCounter" matTooltip="lorem ipsum" [matTooltipPosition]="toolTipPosition">Unfollows counter:</label>
+            <mat-form-field class="example-full-width">
+              <input id="unFollowsCounter" matInput placeholder="Unfollows counter">
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

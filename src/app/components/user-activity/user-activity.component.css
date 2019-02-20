@@ -1,0 +1,73 @@
+.container{
+ padding-top: 30px;
+}
+.diffCategories{
+    padding: 10px 0px
+}
+mat-panel-title{
+    font-weight: bold
+}
+.categoriesTitle{
+    padding-left: 16px;
+    font-size: 22px;
+}
+
+.profilePic{
+    width: 100%
+}
+.toggleBtn{
+    padding: 8px 0px;
+}
+mat-checkbox{
+    position : absolute;
+    right: 30px;
+    /* top: 15px; */
+}
+mat-form-field{
+    float: right;
+}
+@media (max-width:575px){
+    .profilePic{
+        width: 20%
+    }   
+}
+.userName{
+    font-weight: bold;
+    letter-spacing: 1px
+}
+.status{
+    font-weight: bold;
+    letter-spacing: 1px
+
+}
+.clear{
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: baseline;
+}
+.smile{
+    font-size: 25px;
+    vertical-align: bottom;
+}
+.smileSection{
+    padding: 0px 40px;
+    cursor: pointer;
+}
+.addSmile{
+    font-size: 25px;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+.addTags{
+    position: absolute;
+    right: -21px;
+    cursor: pointer;
+}
+
+
+/* mat-select,mat-option{
+    position: absolute;
+    right: 0px;
+    bottom : 6px;
+
+} */
